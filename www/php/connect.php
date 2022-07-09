@@ -18,6 +18,6 @@
         echo '<script> alert("'.$str.'");location.href="'.$url.'";</script>';
     }
     
-    //接收登陆界面传来的数据
+    //建立会话，接收登陆界面传来的数据
     session_start();
 ?>

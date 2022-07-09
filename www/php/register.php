@@ -1,11 +1,11 @@
 <?php
     include('connect.php'); //连接数据库
 
-    //接收登陆界面传来的数据
+    //接收注册界面传来的数据
     $username=$_POST['username'];
     $password=$_POST['password'];
     $cpassword=$_POST['cpassword'];
-    $check=mysqli_query($con,"SELECT * from user where username='$username'");
+    $check=mysqli_query($con,"SELECT * from user where username='$username'"); 
 
     //确认密码
     if($username==NULL||$password==NULL||$cpassword==NULL){

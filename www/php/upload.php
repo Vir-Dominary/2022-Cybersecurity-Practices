@@ -5,6 +5,8 @@
     $allowed_ext=array("gif","jepg","png","jpg");
     $temp=explode(".",$_FILES["file"]["name"]);
     $extension=end($temp);
+    
+    //检查文件类型和格式
     if((($_FILES["file"]["type"]=="image/gif") 
         || ($_FILES["file"]["type"] == "image/jpeg")
         || ($_FILES["file"]["type"] == "image/jpg")
