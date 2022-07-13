@@ -1,0 +1,83 @@
+.login{
+    width:900px;
+    height:600px;
+    border-radius: 25px;
+    background-color:rgb(54, 200, 233);
+    border-width:1px;
+    border-color:gray;
+    text-align: center;
+    margin-left:350px;
+    box-shadow: 10px 10px 10px rgb(83, 124, 153);
+}
+#login_left{
+    background-color:rgb(18, 8, 208);
+    width:400px;
+    height:600px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    float:left;
+}
+#login_right{
+    height:500px;
+}
+.form_title{
+    font-size:64px;
+    font-family:微软雅黑;
+    font-weight:lighter;
+    color:white;
+    text-align:right;
+    margin-right:50px
+}
+.form_input{
+    margin-top:10px;
+    width:400px;
+    height:30px;
+    margin-left:30px;
+    border-radius: 5px;
+}
+.button_primary{
+    font-weight: 600;
+    display: inline-block;
+    user-select: none;
+    text-align: center;
+    border: 1.5px solid transparent;
+    color: #679af9;
+    background: #dde9ff;
+    font-size: 15px;
+    line-height: 36px;
+    padding: 0 20px;
+    border-radius: 6px;
+    margin: 0;
+    height: 25px;
+    cursor: pointer;
+    margin-top:60px;
+    height:50px;
+    width:200px;
+}
+body{
+    background-color:#a8eefd
+}
+#login_title{
+    font-family:微软雅黑;
+    font-size:58px;
+    margin-left:200px;
+    color:rgb(74, 131, 255);
+}
+#register_link{
+    margin:0;
+    float:clear;
+}
+#register_link a{ 
+        font-size: 20px; 
+        color: rgb(121, 121, 121); 
+        text-decoration: none; 
+}
+#register_link p{
+    font-size:20px;
+}
+.form_text{
+    font-family:微软雅黑;
+    font-size:25px;
+    color:aliceblue;
+    margin-right:335px;
+}
