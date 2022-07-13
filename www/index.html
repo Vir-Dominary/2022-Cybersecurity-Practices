@@ -2,19 +2,25 @@
 <html>
     <head>  
         <meta charset="UTF-8">
-        <title>图片上传应用</title>
+        <title>即刻传图</title>
         <link rel="stylesheet" type="text/css" href="source/css/index.css"> <!--此链接留用css-->
     </head>
     <body>
+        <div id="title">
+            <p style="" id="login_title">欢迎来到即刻传图！</p>
+        </div>    
             <div id="login">
-                <h1>请登录</h1> <!--登录、注册-->
-                <form action="php/login_check.php" method="post"> 
-                    <input type="text" name="username" placeholder="请输入用户名"><br>
-                    <input type="password" name="password" placeholder="请输入密码"><br>
-                    <input type="submit" value="登录"><br>
-                    <a href="register.html">注册新账号</a>
+                <h1 class="form_title">请登录</h1> <!--登录、注册-->
+                <form action="php/login_check.php" method="post" id="login_form"> 
+                    <input type="text" name="username" class="form_input" placeholder="请输入用户名"><br>
+                    <input type="password" class="form_input" name="password" placeholder="********"><br>
                 </form>
+                    <div>
+                        <button style="margin-left:600px;margin-top:20px;height:50px;width:200px" class="button_primary" type="submit"onmouseover="alert('欸嘿');">登录</button>
+                    </div>
+                    <div>
+                        <p>没有账号？<a href="register.html">注册新账号</a></p>
+                    </div>
             </div>
     </body>
-    
 </html>
