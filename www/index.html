@@ -6,21 +6,28 @@
         <link rel="stylesheet" type="text/css" href="source/css/index.css"> <!--此链接留用css-->
     </head>
     <body>
-        <div id="title">
+        <div id="login_head">
             <p style="" id="login_title">欢迎来到即刻传图！</p>
         </div>    
-            <div id="login">
-                <h1 class="form_title">请登录</h1> <!--登录、注册-->
-                <form action="php/login_check.php" method="post" id="login_form"> 
-                    <input type="text" name="username" class="form_input" placeholder="请输入用户名"><br>
-                    <input type="password" class="form_input" name="password" placeholder="********"><br>
-                </form>
-                    <div>
-                        <button style="margin-left:600px;margin-top:20px;height:50px;width:200px" class="button_primary" type="submit"onmouseover="alert('欸嘿');">登录</button>
-                    </div>
-                    <div>
-                        <p>没有账号？<a href="register.html">注册新账号</a></p>
-                    </div>
+            <div class="login">
+                <div id="login_left">
+                    <p style="margin-top:200px;margin-right:0;" class="form_text">分享身边美逝</p>
+                </div>
+                <div id="login_right">
+                    <h1 class="form_title">请登录</h1> <!--登录、注册-->
+                    <form action="php/login_check.php" method="post" id="login_form">
+                        <p class="form_text">用户名</p> 
+                        <input type="text" name="username" class="form_input" placeholder="请输入用户名"><br>
+                        <p class="form_text">密码</p>
+                        <input type="password" class="form_input" name="password" placeholder="********"><br>
+                    </form>
+                        <div id="button">
+                            <button class="button_primary" type="submit"onmouseover="alert('欸嘿');">登录</button>
+                        </div>
+                        <div id="register_link">
+                            <p>没有账号？<a href="register.html">注册新账号</a></p>
+                        </div>
+                </div>
             </div>
     </body>
 </html>
