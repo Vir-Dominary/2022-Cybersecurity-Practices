@@ -11,12 +11,11 @@
     if(!$con){
         die('Fail to connect database server:'.mysqli_connect_error());
     }
-
+    
     //定义弹窗
     function alert($str,$url){
         echo '<script> alert("'.$str.'");location.href="'.$url.'";</script>';
     }
-    
     //建立会话，接收登陆界面传来的数据
     session_start();
 ?>
