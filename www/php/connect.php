@@ -18,6 +18,10 @@
         echo '<script> alert("'.$str.'");location.href="'.$url.'";</script>';
     }
     
+    function mkdirs($dir, $folder){
+        mkdir($dir.$folder);
+    }
+    
     //建立会话，接收登陆界面传来的数据
     session_start();
 ?>
