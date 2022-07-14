@@ -4,7 +4,7 @@
     //接收注册界面传来的数据
     $username=$_POST['username'];
     $password=$_POST['password'];
-    $cpassword=$_POST['cpassword'];
+    $cpassword=$_POST['confirmpassword'];
     $check=mysqli_query($con,"SELECT * from user where username='$username'"); 
 
     //确认密码
