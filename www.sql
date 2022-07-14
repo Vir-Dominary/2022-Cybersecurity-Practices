@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主机： localhost
--- 生成日期： 2022-07-14 01:59:51
+-- 生成日期： 2022-07-14 06:42:06
 -- 服务器版本： 8.0.29
 -- PHP 版本： 7.4.30
 
@@ -31,20 +31,19 @@ CREATE TABLE `image` (
   `id` int NOT NULL,
   `address` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `username` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `time` timestamp NOT NULL
+  `time` timestamp NOT NULL,
+  `private` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- 转存表中的数据 `image`
 --
 
-INSERT INTO `image` (`id`, `address`, `username`, `time`) VALUES
-(1, '../image/test.png', 'admin', '2022-07-08 04:05:49'),
-(14, '../image/戈薇.png', 'a', '2022-07-08 08:24:14'),
-(15, '../image/一拳超人3.jpg', 'b', '2022-07-08 08:24:42'),
-(16, '../image/犬夜叉1.png', 'admin', '2022-07-08 08:24:59'),
-(17, '../image/戈薇1.png', 'a', '2022-07-08 08:25:11'),
-(18, '../image/犬夜叉2.png', 'b', '2022-07-08 08:25:27');
+INSERT INTO `image` (`id`, `address`, `username`, `time`, `private`) VALUES
+(26, '../image/admin/test.png', 'admin', '2022-07-14 06:15:15', 1),
+(27, '../image/a/戈薇.png', 'a', '2022-07-14 06:22:48', 1),
+(28, '../image/a/戈薇1.png', 'a', '2022-07-14 06:23:54', 0),
+(29, '../image/admin/犬夜叉2.png', 'admin', '2022-07-14 06:38:49', 0);
 
 -- --------------------------------------------------------
 
@@ -63,9 +62,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`username`, `password`) VALUES
 ('a', 'a'),
-('admin', 'admin'),
-('b', 'b'),
-('c', 'c');
+('admin', 'admin');
 
 --
 -- 转储表的索引
@@ -92,7 +89,7 @@ ALTER TABLE `user`
 -- 使用表AUTO_INCREMENT `image`
 --
 ALTER TABLE `image`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- 限制导出的表
