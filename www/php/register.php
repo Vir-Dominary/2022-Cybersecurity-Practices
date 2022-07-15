@@ -11,7 +11,7 @@
     
     //确认密码
     if($username==NULL||$password==NULL||$cpassword==NULL){
-        alert('用户名密码不可为空，请重新输入','../register.html');
+        alert('用户名或密码不可为空，请重新输入','../register.html');
     }
     else if($password!=$cpassword){
         alert('两次输入密码不一致，请重新输入','../register.html');

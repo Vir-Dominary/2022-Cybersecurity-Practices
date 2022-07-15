@@ -1,10 +1,10 @@
 <?php   //此文件用于链接数据库和声明弹窗
     header('Content-Type:text/html;charset=utf-8');//头部文件声明
-
+    
     //连接数据库
-    $servername='www';
-    $username='root';
-    $password='mysql';
+    $servername='localhost';
+    $username='root1';
+    $password='123456';
     $dbname='www';
     $con=mysqli_connect($servername,$username,$password,$dbname);//创建连接
 

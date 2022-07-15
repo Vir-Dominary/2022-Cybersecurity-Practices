@@ -26,6 +26,7 @@
             else{
                 $addr="../image/$username/".$_FILES["file"]["name"];
                 move_uploaded_file($_FILES["file"]["tmp_name"], $addr);
+                alert('上传成功','home.php');
                 $sql="INSERT into image(address,username,time,private) values('$addr','$username',NOW(),'$private')";
                 if(mysqli_query($con,$sql)){
                     alert('上传成功','home.php');
