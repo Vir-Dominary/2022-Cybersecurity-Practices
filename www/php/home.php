@@ -2,7 +2,7 @@
     include('connect.php'); //连接数据库
     $username=$_SESSION["username"]; //获取当前用户名
     if(!$username){
-        alert('请登陆后查看','../index.html');
+        alert('主页内容需要登录后查看，正在跳转到登录界面...','../index.html');
     }
 ?>
 
@@ -23,7 +23,7 @@
         <div class="padding">
         </div>
         <div id="upload">
-            <p>在这里上传图片</p>
+            <p>在这里上传图片(最好是竖向的图片)</p>
         <form action="upload.php" method="post" enctype="multipart/form-data"> <!--上传按钮-->
             <input type="file" name="file" accept="image"><br>
             是否他人可见：
