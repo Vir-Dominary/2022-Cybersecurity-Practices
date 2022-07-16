@@ -1,0 +1,247 @@
+body{
+    background-image:url('../material/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment:fixed;
+}
+
+#plain{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(20px);
+    background-color: rgba(255,255,255,.2);
+}
+
+*{
+    margin:0;
+    padding:0;
+}
+
+#guide{
+    position: fixed;
+    float: left;
+    height: 100%;
+    width: 400px;
+    background-color: rgb(58, 58, 84);
+}
+
+#title{
+    position: relative;
+    top:100px;
+    left: 75px;
+    color: rgb(247, 247, 255);
+}
+
+#logo{
+    height: 85px;
+    width: 85px;
+}
+
+#hr1{
+    position: relative; 
+    top:140px; 
+    left:28px; 
+    border: none;
+    height:2px;
+    background-color: rgb(171, 178, 208);
+    width: 340px;
+    border-radius: 10px;
+}
+
+#card{
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+    font-size: 30px;
+    position: relative;
+    text-align: center;
+    top:190px;
+    left:40px;
+    width: 500px;
+}
+
+#welcome{
+    color:rgb(207, 217, 225);
+    float: left;
+}
+
+#name{
+    position: relative;
+    left: 8px;
+    bottom: 7px;
+    padding:5px;
+    border-radius: 7px;
+    color:rgb(39, 8, 90);
+    background-color: rgb(207, 217, 225);
+    float: left;
+}
+
+#hr2{
+    position: relative; 
+    top:230px; 
+    left:28px;
+    border: none;
+    height:2px;
+    background-color: rgb(171, 178, 208);
+    width: 340px;
+    border-radius: 10px;
+}
+
+#upload{
+    position: relative;
+    top:275px;
+}
+
+#file{
+    display: none;
+}
+
+#label{
+    cursor: pointer;
+    font-weight: bold;
+    padding:15px 50px;
+    position: relative;
+    border-radius: 15px;
+    height: 65px;
+    width: 200px;
+    background-color: rgb(207, 217, 225);
+    color: rgb(39, 8, 90);
+    top:5px;
+    left:117px;
+}
+
+#choose{
+    position: relative;
+    width: 200px;
+    left: 123px;
+    color: rgb(207, 217, 225);
+    font-size: 18px;
+}
+
+#button{
+    cursor: pointer;
+    position: relative;
+    top:20px;
+    left:175px;
+    color: rgb(235, 243, 250);
+    background-color:rgb(153, 105, 185);
+    width: 55px;
+    height: 55px;
+    border-radius: 50px;
+    font-family: Microsoft JhengHei;
+    font-weight: bolder;
+    font-size: 21px;
+    border-style: none;
+}
+
+#button:focus{
+    position: relative;
+    top:20px;
+    left:175px;
+    background-color: rgb(38, 38, 59);
+    color: rgb(207, 217, 225);
+    width: 55px;
+    height: 55px;
+    border-radius: 50px;
+    font-family: Microsoft JhengHei;
+    font-weight: bolder;
+    font-size: 21px;
+    border-style: none;
+}
+
+#Logout{
+    position: relative;
+    width: 200px;
+    top:410px;
+    left: 20px;
+}
+
+#logout{
+    text-decoration: none;
+    background-color: rgb(236, 74, 149);
+    padding:8px;
+    border-radius: 10px;
+    color: rgb(207, 217, 225);
+}
+
+#wall{
+    position: relative;
+    top:-100px;
+    left: 400px;
+    width: 612px;
+}
+
+.show{
+    width: 500px;
+    height: 480px;
+    position: relative;
+    left:280px;
+}
+
+.smname{
+    position: relative;
+    padding:7px;
+    border-radius: 20px;
+    color:rgb(207, 217, 225);
+    background-color: rgb(100, 73, 167);
+    float: left;
+    height: 28;
+}
+
+.time{
+    position: relative;
+    left: 280px;
+    height: 21px;
+}
+
+.Delete{
+    position: relative;
+    top:-5px;
+    left: 438px;
+    width: 75px;
+    height: 51;
+}
+
+.delete{
+    cursor: pointer;
+    background-color: rgb(236, 74, 149);
+    padding:5px 15px;
+    border:none;
+    border-radius: 10px;
+    font-size: 15px;
+    color: rgb(207, 217, 225);
+}
+
+.img{
+    position: absolute;
+    top:70px;
+}
+
+.image{
+    height: 340px;
+    border-radius: 10px;
+    border: 5px solid rgb(131, 149, 177);
+    box-shadow: 0 0 5px rgb(58, 57, 77);
+}
+
+.tag{
+    position: absolute;
+    top:425px;
+    left:5px;
+    font-weight: 700;
+    color: rgb(76, 89, 114);
+    height: 30px;
+}
+
+.hr3{
+    position: absolute;
+    top: 450px;
+    left: -65px;;
+    border: none;
+    height:2px;
+    background-color: rgb(137, 149, 171);
+    width: 640px;
+    border-radius: 10px;
+
+}
+

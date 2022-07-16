@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <title>即刻传图</title>
+        <link rel="stylesheet" type="text/css" href="../source/css/home.css">
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div id="plain"></div>
+        <div >
+            <div id="guide">
+                <div id="title">
+                    <img style="float:left" id="logo" src="../source/material/logo.png" alt="logo">
+                    <h1 style="position: relative; top:20px; left:30px">即刻传图</h1>
+                </div>
+                <hr id="hr1">
+                <div id="card">
+                    <div id="welcome">welcome,</div>
+                    <div id="name">admin</div>
+                </div>
+                <hr id="hr2">
+                <div id="upload">
+                    <form action="upload.php" method="post" enctype="multipart/form-data"> <!--上传按钮-->
+                        <input id="file" type="file" name="file" accept="image">
+                        <label id="label" for="file">选择文件</label>
+                        <br><br><br>
+                        <div id="choose">
+                            他人可见？
+                            <input  type="radio" name="private" value="0" checked="true">√ 
+                            <input  type="radio" name="private" value="1">×<br>
+                        </div>
+                        <input id="button" type="submit" value="上传">                    
+                    </form>
+                </div>
+                <div id="Logout">
+                    <a id="logout" href="logout.php">退出登录</a>
+                </div>
+                
+            </div>
+            <div style="height: 170px;"></div>
+            <div id="wall">
+                <div class="show">
+                    <div class="smname">admin</div>
+                    <div class="time">2022-07-14 14:38:49</div>
+                    <div class="Delete">
+                        <form action='delete.php' method='post'>
+                            <input type='text' name='address' value='$row[address]' style='display:none'>
+                            <input class="delete" type='submit' value='删除'>    
+                        </form>
+                    </div>
+                    <div class="img">
+                        <img class="image" src="../image/test.png" alt="img">
+                    </div>
+                    <div class="tag">
+                        ×他人不可见↑
+                    </div>
+                    <hr class="hr3">
+                </div>
+                <div class="show">
+                    <div class="smname">admin</div>
+                    <div class="time">2022-07-14 14:38:49</div>
+                    <div class="Delete">
+                        <form action='delete.php' method='post'>
+                            <input type='text' name='address' value='$row[address]' style='display:none'>
+                            <input class="delete" type='submit' value='删除'>    
+                        </form>
+                    </div>
+                    <div class="img">
+                        <img class="image" src="../image/a/戈薇1.png" alt="img">
+                    </div>
+                    <hr class="hr3">
+                </div>
+                <div class="show">
+                    <div class="smname">a</div>
+                    <div class="time">2022-07-14 14:38:49</div>
+                    
+                    <div class="img">
+                        <img class="image" src="../image/a/戈薇1.png" alt="img">
+                    </div>
+                    <hr class="hr3">
+                </div>
+                <div class="show">
+                    <div class="smname">admin</div>
+                    <div class="time">2022-07-14 14:38:49</div>
+                    <div class="Delete">
+                        <form action='delete.php' method='post'>
+                            <input type='text' name='address' value='$row[address]' style='display:none'>
+                            <input class="delete" type='submit' value='删除'>    
+                        </form>
+                    </div>
+                    <div class="img">
+                        <img class="image" src="../image/test.png" alt="img">
+                    </div>
+                    <div class="tag">
+                        ×他人不可见↑
+                    </div>
+                    <hr class="hr3">
+                </div>
+            </div>
+            
+                
+            </div>
+        </div>
+        
+    </body>
+</html>
