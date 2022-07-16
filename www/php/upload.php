@@ -26,7 +26,7 @@
                 alert($str,"home.php");
             }
             else{
-                if(!$private){
+                if($private==NULL){
                     alert("未选择图片公开选项","home.php");
                 }
                 else{
