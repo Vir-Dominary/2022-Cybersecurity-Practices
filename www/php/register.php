@@ -1,19 +1,19 @@
 <?php
     include('connect.php'); //连接数据库
-    
+
     //接收注册界面传来的数据
     $username=$_POST['username'];
     $password=$_POST['password'];
-    $cpassword=$_POST['cpassword'];
+    $confirmpassword=$_POST['confirmpassword'];
     $check=mysqli_query($con,"SELECT * from user where username='$username'"); 
 
     $imgaddr='../image/'; //数据库图片总文件夹
     
     //确认密码
-    if($username==NULL||$password==NULL||$cpassword==NULL){
+    if($username==NULL||$password==NULL||$confirmpassword==NULL){
         alert('用户名或密码不可为空，请重新输入','../register.html');
     }
-    else if($password!=$cpassword){
+    else if($password!=$confirmpassword){
         alert('两次输入密码不一致，请重新输入','../register.html');
     }
     else if(mysqli_num_rows($check)>0){

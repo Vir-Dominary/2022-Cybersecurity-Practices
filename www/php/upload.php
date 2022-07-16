@@ -1,11 +1,13 @@
 <?php
     include('connect.php');
+
+    ini_set('display_errors','off');
     
     $username=$_SESSION["username"];
     $allowed_ext=array("gif","jepg","png","jpg");
     $temp=explode(".",$_FILES["file"]["name"]);
     $extension=end($temp);
-    $private=$_POST['private'];
+    $private=$_POST["private"];
     
     //检查文件类型和格式
     if((($_FILES["file"]["type"]=="image/gif") 
@@ -24,12 +26,17 @@
                 alert($str,"home.php");
             }
             else{
-                $addr="../image/$username/".$_FILES["file"]["name"];
-                move_uploaded_file($_FILES["file"]["tmp_name"], $addr);
-                alert('上传成功','home.php');
-                $sql="INSERT into image(address,username,time,private) values('$addr','$username',NOW(),'$private')";
-                if(mysqli_query($con,$sql)){
+                if(!$private){
+                    alert("未选择图片公开选项","home.php");
+                }
+                else{
+                    $addr="../image/$username/".$_FILES["file"]["name"];
+                    move_uploaded_file($_FILES["file"]["tmp_name"], $addr);
                     alert('上传成功','home.php');
+                    $sql="INSERT into image(address,username,time,private) values('$addr','$username',NOW(),'$private')";
+                    if(mysqli_query($con,$sql)){
+                        alert('上传成功','home.php');
+                    }
                 }
             }
         }
