@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主机： localhost
--- 生成日期： 2022-07-14 06:42:06
+-- 生成日期： 2022-07-16 06:38:07
 -- 服务器版本： 8.0.29
 -- PHP 版本： 7.4.30
 
@@ -89,7 +89,7 @@ ALTER TABLE `user`
 -- 使用表AUTO_INCREMENT `image`
 --
 ALTER TABLE `image`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- 限制导出的表
