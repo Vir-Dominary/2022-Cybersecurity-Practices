@@ -2,6 +2,7 @@
     include('connect.php');
     
     $addr=$_POST['address'];
+    $user=$_SESSION['username'];
     
     $sql="DELETE from image where address='$addr'";
     mysqli_query($con, $sql);
@@ -14,5 +15,3 @@
     }
     
     
-
-
