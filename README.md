@@ -128,6 +128,17 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
+-- 7.20数据库更新内容
+ALTER TABLE user ADD question VARCHAR(1);
+ALTER TABLE user ADD answer VARCHAR(50);
+
+UPDATE user SET question ='0' WHERE username ='admin';
+UPDATE user SET answer ='村上春树' WHERE username ='admin';
+UPDATE user SET question ='0' WHERE username ='a';
+UPDATE user SET answer ='明日花' WHERE username ='a';
+UPDATE user SET question ='0' WHERE username ='sekirito';
+UPDATE user SET answer ='早见沙织' WHERE username ='sekirito';
+
 ```
 
 5. (如果数据库名以及口令是按照我的上述内容创建的，则不需要这一步)打开/www/php/connect.php文件，修改对应的数据库参数
