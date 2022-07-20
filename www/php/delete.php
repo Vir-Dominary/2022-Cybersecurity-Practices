@@ -4,7 +4,7 @@
     $addr=$_POST['address'];
     $username=$_SESSION["username"];
     $sql="SELECT from image where address='$addr'&&username='$username'";
-    if($sql){
+    if(!mysqli_query($con, $sql)){
         echo"<script>alert('你无权删除此文件');</script>";
         header('Location: ../index.html'); //跳转登录页面
         exit();

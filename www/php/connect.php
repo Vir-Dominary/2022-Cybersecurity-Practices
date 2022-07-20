@@ -1,6 +1,11 @@
 <?php   //此文件用于链接数据库和声明弹窗
     header('Content-Type:text/html;charset=utf-8');//头部文件声明
-
+    /*
+    $check_uname=$_SESSION['username'];
+    if($check_uname){
+        alert('你有账号尚未退出！请退出登录','/php/home.php');//检查是否有对话尚在连接中
+    }
+    */
     //连接数据库
     $servername='localhost';
     $username='root1';

@@ -1,6 +1,6 @@
 <?php
     include('connect.php'); //连接数据库
-
+    
     $username=$_POST['username'];
     $password=$_POST['password'];  //接收用户名密码
 

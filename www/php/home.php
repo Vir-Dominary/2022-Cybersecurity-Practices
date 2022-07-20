@@ -10,9 +10,44 @@
 <html>
     <head>  
         <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="../source/css/firefox/home.css"> <!--此链接留用css-->
+        <!--<link rel="stylesheet" type="text/css" href="../source/css/firefox/home.css"> 此链接留用css-->
     </head>
     <body>
+    <script type="text/javascript">
+            function getBrowser() {  
+            var ua = window.navigator.userAgent;  
+            var isIE = window.ActiveXObject != undefined && ua.indexOf("MSIE") != -1;
+            var isIEEdge = ua.indexOf("Windows NT 6.1; WOW64; Trident/7.0;") != -1;  
+            var isFirefox = ua.indexOf("Firefox") != -1;  
+            var isOpera = window.opr != undefined;  
+            var isChrome = ua.indexOf("Chrome") && window.chrome;  
+            var isSafari = ua.indexOf("Safari") != -1 && ua.indexOf("Version") != -1;  
+            if (isIE) {  
+                return "IE";  
+            }else if (isIEEdge) {  
+                return "Edge";  
+            } else if (isFirefox) {  
+                return "Firefox";  
+            } else if (isOpera) {  
+                return "Opera";  
+            } else if (isChrome) {  
+                return "Chrome";  
+            } else if (isSafari) {  
+                return "Safari";  
+            } else {  
+                return "Unkown";  
+            }  
+        }
+        var linkNode = document.createElement("link");
+        linkNode.setAttribute("rel", "stylesheet");
+        linkNode.setAttribute("type", "text/css");
+        if (getBrowser() == "Firefox") {
+            linkNode.setAttribute("href", "../source/css/firefox/home.css");
+        }else{
+            linkNode.setAttribute("href", "../source/css/chrome/home.css");
+        }
+        document.head.appendChild(linkNode);
+    </script>
         <div id="navigation">
             <h1 style="color:white;">个人中心</h1>
         <?php 

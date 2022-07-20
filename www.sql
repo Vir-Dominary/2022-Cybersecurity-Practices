@@ -105,3 +105,13 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+ALTER TABLE user ADD question VARCHAR(1);
+ALTER TABLE user ADD answer VARCHAR(50);
+
+UPDATE user SET question ='0' WHERE username ='admin';
+UPDATE user SET answer ='村上春树' WHERE username ='admin';
+UPDATE user SET question ='0' WHERE username ='a';
+UPDATE user SET answer ='明日花' WHERE username ='a';
+UPDATE user SET question ='0' WHERE username ='sekirito';
+UPDATE user SET answer ='早见沙织' WHERE username ='sekirito';
