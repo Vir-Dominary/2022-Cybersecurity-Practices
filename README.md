@@ -5,7 +5,7 @@
 ---
 
 
-## 部署文档(开发过程)
+## 部署文档
 
 克隆仓库到本地
 
@@ -128,7 +128,6 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
--- 7.20数据库更新内容
 ALTER TABLE user ADD question VARCHAR(1);
 ALTER TABLE user ADD answer VARCHAR(50);
 
@@ -138,6 +137,7 @@ UPDATE user SET question ='0' WHERE username ='a';
 UPDATE user SET answer ='明日花' WHERE username ='a';
 UPDATE user SET question ='0' WHERE username ='sekirito';
 UPDATE user SET answer ='早见沙织' WHERE username ='sekirito';
+
 
 ```
 
