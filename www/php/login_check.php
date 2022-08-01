@@ -1,23 +1,13 @@
 <?php
     include('connect.php'); //连接数据库
+    ob_start();
     session_start();
 
     //验证登录
-    try {
-        $conn = connect();
-        $sql = "select * from user where username=:username and password=:password";
-        $username=$_POST['username'];
-        $password=$_POST['password'];  //接收用户名密码
-        $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':username', $username);
-        $stmt->bindParam(':password',$password);
-        $stmt->execute();
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        $check = isset($result['password']) ? $result['password'] : '';
-    } catch(PDOException $e) {
-        throw $e;
+    
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        Logincheck($_POST);
     }
-
     //读取数据库信息
     /*
     $result=mysqli_query($con,$sql);
