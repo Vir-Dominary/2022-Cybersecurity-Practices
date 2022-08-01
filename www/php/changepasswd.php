@@ -1,13 +1,27 @@
 <?php
     include('connect.php');
+    session_start();
     $username=$_SESSION["username"];
     if(!$username){
         alert('请登陆后使用此功能','../index.html');
+        session_abort();
         exit();
     }
     $username=$_SESSION['username'];
     $npassword=$_POST['npassword'];
     $cpassword=$_POST['cpassword'];
+
+    try {
+        $conn = connectDb();
+        $sql = "select password from users where name=:name";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':name', $name);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return isset($result['password']) ? $result['password'] : '';
+    } catch(PDOException $e) {
+        throw $e;
+    }
 
     if($npassword==NULL||$cpassword==NULL){
         alert('密码不可为空，请重新输入','../change.html');

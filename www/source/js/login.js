@@ -1,5 +1,9 @@
 window.onload=adjust();
 
+
+    
+
+
 function CheckILeaglInput(str){
     
     var xmlhttp;
@@ -53,6 +57,7 @@ function getBrowser() {
         return "Unkown";  
     }  
 }
+
 function adjust(){
     var linkNode = document.createElement("link");
     linkNode.setAttribute("rel", "stylesheet");

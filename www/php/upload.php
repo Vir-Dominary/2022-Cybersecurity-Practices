@@ -1,6 +1,6 @@
 <?php
     include('connect.php');
-    
+    session_start();
     $username=$_SESSION["username"];
     $allowed_ext=array("gif","jepg","png","jpg");
     $temp=explode(".",$_FILES["file"]["name"]);
