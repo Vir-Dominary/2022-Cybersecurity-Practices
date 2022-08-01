@@ -1,5 +1,6 @@
 <?php
     include('connect.php'); //连接数据库
+    session_start();
     $username=$_SESSION["username"]; //获取当前用户名
     if(!$username){
         alert('主页内容需要登录后查看，正在跳转到登录界面...','../index.html');
@@ -11,7 +12,7 @@
     <head>  
         <meta charset="UTF-8">
         <script src="../source/js/login.js"></script>
-        <!--<link rel="stylesheet" type="text/css" href="../source/css/firefox/home.css">-->
+        <link rel="stylesheet" type="text/css" href="../source/css/firefox/home.css">
     </head>
     <body>
         <div id="navigation">
