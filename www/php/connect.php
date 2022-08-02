@@ -1,16 +1,11 @@
 <?php   //连接数据库、数据库相关操作
     header('Content-Type:text/html;charset=utf-8');//头部文件声明
-    /*
-    $check_uname=$_SESSION['username'];
-    if($check_uname){
-        alert('你有账号尚未退出！请退出登录','/php/home.php');//检查是否有对话尚在连接中
-    }
-    */
     $servername='localhost';
     $username='root1';
     $password='123456';
     $dbname='www';
     $con=mysqli_connect($servername,$username,$password,$dbname);
+
 function connect(){//连接数据库
     $servername='localhost';
     $username='root1';
@@ -39,6 +34,35 @@ function checkRegisterInDb($name) {//检查用户名重复
     }
 }
 
+function getAnswerInDb($username){
+    try{
+        $conn = connect();
+        $sql="SELECT answer FROM user WHERE username=:username";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':username',$username);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return isset($result['answer']) ? $result['answer'] : '';
+    }catch(PDOException $e){
+        throw $e;
+    }
+}
+
+function resetPassword($username,$hashednewpassword){
+    try{
+        $conn = connect();
+        $sql = "UPDATE user SET password=:password WHERE username=:username";
+        $stmt = $conn -> prepare($sql);
+        $stmt -> bindParam(':password',$hashednewpassword);
+        $stmt -> bindParam(':username',$username);
+        $stmt -> execute();
+        return 1; 
+    }catch(PDOException $e){
+        throw $e;
+    }
+
+}
+
 function Logincheck($postArr){//登录验证
     if(!empty($postArr['username']) && !empty($postArr['password'])){  
         try {
@@ -62,15 +86,18 @@ function Logincheck($postArr){//登录验证
 }
 
 function changePassword($username,$npassword){
-    $conn = connect();
-    $newPasswordHash = password_hash($npassword, PASSWORD_DEFAULT);
-    $sql = "UPDATE user SET password =:npassword where username=:username";
-    $stmt = $conn -> prepare($sql);
-    $stmt -> bindParam(':npassword',$newPasswordHash);
-    $stmt -> bindParam(':username',$username);
-    $stmt -> execute();
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    return $result;
+    try{
+        $conn = connect();
+        $newPasswordHash = password_hash($npassword, PASSWORD_DEFAULT);
+        $sql = "UPDATE user SET password =:npassword where username=:username";
+        $stmt = $conn -> prepare($sql);
+        $stmt -> bindParam(':npassword',$newPasswordHash);
+        $stmt -> bindParam(':username',$username);
+        $stmt -> execute();
+        return 1;
+    }catch(PDOException $e){
+        throw $e;
+    }
 }
 
 function getUserInfoInDb($name) {//登录验证后获取用户信息
