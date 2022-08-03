@@ -1,14 +1,14 @@
 <?php
     include('connect.php');
-    $username=$_SESSION["username"];
+    $username=mysqli_real_escape_string($_SESSION["username"]);
     if(!$username){
         alert('请登陆后使用此功能','../index.html');
         session_abort();
         exit();
     }
-    $username=$_SESSION['username'];
-    $npassword=$_POST['npassword'];
-    $cpassword=$_POST['cpassword'];
+    $username=mysqli_real_escape_string($_SESSION['username']);
+    $npassword=mysqli_real_escape_string($_POST['npassword']);
+    $cpassword=mysqli_real_escape_string($_POST['cpassword']);
     if($npassword==NULL||$cpassword==NULL){//校验输入内容
         alert('密码不可为空，请重新输入','../change.html');
     }

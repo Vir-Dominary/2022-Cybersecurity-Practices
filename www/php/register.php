@@ -8,9 +8,9 @@
 
     function doRegister($postArr)
     {
-        $userName = $postArr['username'];
-        $password = $postArr['password'];
-        $question = $postArr['question'];
+        $userName = mysqli_real_escape_string($postArr['username']);
+        $password = mysqli_real_escape_string($postArr['password']);
+        $question = mysqli_real_escape_string($postArr['question']);
         $answer = $postArr['answer'];
         $cpassword = $postArr['cpassword'];
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
