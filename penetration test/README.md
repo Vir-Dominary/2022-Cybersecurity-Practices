@@ -2,25 +2,40 @@
 
 # 更新日志（倒序）：
 
-<u>2022.7.25：漏洞测试文档初公布。本次测试以确认存在的漏洞有：
+<u>2022.8.4：经历一次大范围的漏洞修补后，仍存在的风险有</u>
 
-1.强制访问控制
+*1.强制访问控制*
 
-2.加密失败
+*5.配置项的安全问题*
 
-3.注入
+*7.身份验证失效*
 
-4.设计（逻辑）漏洞
+*9.无保障机制*
 
-5.配置项的安全问题
+*10.Server-Side Request Forgery (SSRF)*
 
-7.身份验证失效
+*11.文件上传漏洞*
 
-9.无保障机制
 
-10.Server-Side Request Forgery (SSRF)
+<u>2022.7.25：漏洞测试文档初公布。本次测试以确认存在的漏洞有：</u>
 
-11.文件上传漏洞</u>
+*1.强制访问控制*
+
+*2.加密失败*
+
+*3.注入*
+
+*4.设计（逻辑）漏洞*
+
+*5.配置项的安全问题*
+
+*7.身份验证失效*
+
+*9.无保障机制*
+
+*10.Server-Side Request Forgery (SSRF)*
+
+*11.文件上传漏洞*
 
 # 正文：测试全流程一览
 
@@ -73,13 +88,15 @@ insert into `virdy` (`id`, `title`, `text`) values (3,'guest','hello guest');
 
 可以看到，对于部分php文件——如connect.php，是无法通过强制访问查看的。但同样为php文件的home.php，虽然会由于攻击者未登录而被弹回到index.html，但却暴露了网站的存储结构。而对于image下的图像，不需要任何权限、甚至不需要登录就能查看。
 
-2.加密失败<font size=6 color=red>(exist)</font>
+2.加密失败<font size=6 color=green>(not exist)</font>
 
 > Previously known as Sensitive Data Exposure, which is more of a broad symptom rather than a root cause, the focus is on failures related to cryptography (or lack thereof). Which often lead to exposure of sensitive data. Notable Common Weakness Enumerations (CWEs) included are CWE-259: Use of Hard-coded Password, CWE-327: Broken or Risky Crypto Algorithm, and CWE-331 Insufficient Entropy.
 
-保存用户密码的方式直接且单薄，没有散列、混淆和加密等操作。本网站显然存在这个问题。
+~~保存用户密码的方式直接且单薄，没有散列、混淆和加密等操作。本网站显然存在这个问题。~~
 
-3.注入<font size=6 color=red>(exist)</font>
+使用哈希加密后再储存，加密的安全性提高
+
+3.注入<font size=6 color=green>(not exist)</font>
 
 >Notable Common Weakness Enumerations (CWEs) included are CWE-79: Cross-site Scripting, CWE-89: SQL Injection, and CWE-73: External Control of File Name or Path.
 
@@ -87,15 +104,19 @@ insert into `virdy` (`id`, `title`, `text`) values (3,'guest','hello guest');
 
 在黑盒测试中，常见的注入方式未能成功.
 
-检查代码时发现在[connect.php](testimony/Injection.txt)中，username&password两项均为没有任何安全措施的直接输入，因此本网站的白盒测试未通过。
+~~检查代码时发现在[connect.php](testimony/Injection.txt)中，username&password两项均为没有任何安全措施的直接输入，因此本网站的白盒测试未通过。~~
 
-4.设计（逻辑）漏洞<font size=6 color=red>(exist)</font>
+输入端的代码以经过优化，用户的输入会被视为不安全内容处理后，加以转义再传入后端。
+
+4.设计（逻辑）漏洞<font size=6 color=yellow>(maybe exist)</font>
 
 > Insecure design is a broad category representing different weaknesses, expressed as “missing or ineffective control design.” Insecure design is not the source for all other Top 10 risk categories. There is a difference between insecure design and insecure implementation. We differentiate between design flaws and implementation defects for a reason, they have different root causes and remediation. A secure design can still have implementation defects leading to vulnerabilities that may be exploited. An insecure design cannot be fixed by a perfect implementation as by definition, needed security controls were never created to defend against specific attacks. One of the factors that contribute to insecure design is the lack of business risk profiling inherent in the software or system being developed, and thus the failure to determine what level of security design is required.
 
 不安全设计不同于其他九种漏洞，它并不是代码层面的漏洞，而是设计逻辑上的漏洞。即使是完美的代码实现，也无法掩盖逻辑上的缺失。
 
-在本网站中，密保问题数量少，且“喜爱的演员”是一个极易重合的群体，因此有被攻击者利用的风险。
+~~在本网站中，密保问题数量少，且“喜爱的演员”是一个极易重合的群体，因此有被攻击者利用的风险。~~
+
+密保问题更新为三个，但更建议将三个问题同时作为密保。
 
 5.配置项的安全问题<font size=6 color=red>(exist)</font>
 
