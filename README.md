@@ -14,4 +14,4 @@
 
 2022.8.4：
 
-网站前后端已经封装成docker，负责break的同学可以参考'docker-byzfd'分支下，的说明文档以搭建网站，以此为基础完成break。*关于现存的漏洞，请参考'virdy-Penetration-testing'分支*
+网站前后端已经封装成docker，负责break的同学可以参考'docker-byzfd'分支下的说明文档以搭建网站，以此为基础完成break。*关于现存的漏洞，请参考'virdy-Penetration-testing'分支*
