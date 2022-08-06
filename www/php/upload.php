@@ -1,7 +1,7 @@
 <?php
     include('connect.php');
     session_start();
-    $username=mysqli_real_escape_string($_SESSION["username"];)
+    $username=mysqli_real_escape_string($con,$_SESSION["username"];)
     $allowed_ext=array("gif","jepg","png","jpg");
     $temp=explode(".",$_FILES["file"]["name"]);
     $extension=end($temp);

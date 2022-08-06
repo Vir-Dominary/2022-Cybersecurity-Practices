@@ -3,14 +3,14 @@
     ob_start();
     session_start();
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        doRegister($_POST);
+        doRegister($_POST,$con);
     }
 
-    function doRegister($postArr)
+    function doRegister($postArr,$con)
     {
-        $userName = mysqli_real_escape_string($postArr['username']);
-        $password = mysqli_real_escape_string($postArr['password']);
-        $question = mysqli_real_escape_string($postArr['question']);
+        $userName = mysqli_real_escape_string($con,$postArr['username']);
+        $password = mysqli_real_escape_string($con,$postArr['password']);
+        $question = mysqli_real_escape_string($con,$postArr['question']);
         $answer = $postArr['answer'];
         $cpassword = $postArr['cpassword'];
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);

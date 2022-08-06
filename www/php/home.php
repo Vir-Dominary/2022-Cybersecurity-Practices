@@ -1,7 +1,7 @@
 <?php
     include('connect.php'); //连接数据库
     session_start();
-    $username=mysqli_real_escape_string($_SESSION["username"]); //获取当前用户名
+    $username=mysqli_real_escape_string($con,$_SESSION["username"]); //获取当前用户名
     if(!$username){
         alert('主页内容需要登录后查看，正在跳转到登录界面...','../index.html');
     }

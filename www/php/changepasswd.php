@@ -1,25 +1,20 @@
 <?php
-<<<<<<< HEAD
+
     include('connect.php');
-    $username=mysqli_real_escape_string($_SESSION["username"]);
-=======
+    $username=mysqli_real_escape_string($con,$_SESSION["username"]);
     require 'home.php';
     $username=$_SESSION['username'];
->>>>>>> 293769c36f739b004cc0e661e51cec1a7981133c
     if(!$username){
         alert('请登陆后使用此功能','../index.html');
         session_destroy();
         exit();
     }
-<<<<<<< HEAD
-    $username=mysqli_real_escape_string($_SESSION['username']);
-    $npassword=mysqli_real_escape_string($_POST['npassword']);
-    $cpassword=mysqli_real_escape_string($_POST['cpassword']);
-=======
+    $username=mysqli_real_escape_string($con,$_SESSION['username']);
+    $npassword=mysqli_real_escape_string($con,$_POST['npassword']);
+    $cpassword=mysqli_real_escape_string($con,$_POST['cpassword']);
     $npassword=$_POST['npassword'];
     $cpassword=$_POST['cpassword'];
 
->>>>>>> 293769c36f739b004cc0e661e51cec1a7981133c
     if($npassword==NULL||$cpassword==NULL){//校验输入内容
         alert('密码不可为空，请重新输入','../change.html');
     }
