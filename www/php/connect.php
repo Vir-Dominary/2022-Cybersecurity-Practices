@@ -16,7 +16,7 @@ function connect(){//连接数据库
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_PERSISTENT => true
     );
-    $con=new PDO("mysql:host=$servername;dbname=$dbname;charset=$charset",$username,$password,$options);//创建连接
+    $con=@new PDO("mysql:host=$servername;dbname=$dbname;charset=$charset",$username,$password,$options);//创建连接
     return $con;
 }
 

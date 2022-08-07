@@ -107,7 +107,7 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 ALTER TABLE user ADD question VARCHAR(1);
-ALTER TABLE user ADD answer VARCHAR(50);
+ALTER TABLE user ADD answer VARCHAR(100);
 
 UPDATE user SET question ='0' WHERE username ='admin';
 UPDATE user SET answer ='村上春树' WHERE username ='admin';
