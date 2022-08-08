@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+    <meta charset ="utf-8">
+    <link rel="stylesheet" type="text/css" href="./source/css/firefox/index.css">
+    <script>
+        var uname = document.getElementById("username");
+        var password = document.getElementById("password");
+        var cpassword = document.getElementById("cpassword");
+        var answer = document.getElementById("answer");
+        var ok = document.getElementsByClassName("button_primary");
+        function checkIlegalInput(){
+            if(uname == "" || password == ""||cpassword == ""){
+                alert('账号或密码不可为空！');
+                document.execCommand('Refresh');  
+                return false;
+            }else if(password!=cpassword){
+                alert('两次输入密码不一致！');
+                document.execCommand('Refresh');  
+                return false;
+            }else if(answer == ""){
+                alert('密保问题不可为空！');
+                document.execCommand('Refresh');  
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+    </script>
+    <title>重置密码</title>
+</head>
+<body>
+    <div id="login_head">
+        <p  id="login_title">重置密码</p>
+    </div>
+    <div class="login" id="register">    
+    <form action="./php/reset.php" method="post"> <!--注册-->
+        <p style="margin-top:30px;" class="form_text">用户名</p>
+        <input type="text" name="username" class="form_input" placeholder="请输入用户名"><br>
+        <p class="form_text">选择密保问题</p>
+        <select name="question" class="form_input"><br>
+            <option value="1" selected>我最喜欢的演员/角色？</option>
+            <option value="2">我的老家在哪个城市？</option>
+            <option value="3">我最喜欢的食物是什么？</option>
+        </select>
+        <p class="form_text">密保答案</p>
+        <input type="text" name="answer" class="form_input"placeholder="请输入密保答案"><br>
+        <div id="button">
+            <button class="button_primary" type="submit">重置密码</button>
+        </div>
+        <div id="register_link">
+            <p>我又想起来了？<a href="index.html">回去登录</a></p>
+        </div>
+    </form>
+</body>
+</html>
