@@ -3,7 +3,7 @@
     session_start();
     $username=mysqli_real_escape_string($con,$_SESSION["username"]); //获取当前用户名
     if(!$username){
-        alert('主页内容需要登录后查看，正在跳转到登录界面...','../index.html');
+        alert('主页内容需要登录后查看，正在跳转到登录界面...','index.html');
     }
 ?>
 
@@ -11,8 +11,8 @@
 <html>
     <head>  
         <meta charset="UTF-8">
-        <script src="../source/js/login.js"></script>
-        <link rel="stylesheet" type="text/css" href="../source/css/firefox/home.css">
+        <script src="./source/js/login.js"></script>
+        <link rel="stylesheet" type="text/css" href="./source/css/firefox/home.css">
     </head>
     <body>
         <div id="navigation">
@@ -21,7 +21,7 @@
             echo "<h3 style='color:white;'>欢迎回来：$username!</h3>"; 
         ?> 
             <a href="logout.php">退出登录</a>
-            <a href="../change.html">修改密码</a>
+            <a href="change.html">修改密码</a>
         </div> 
         <div class="padding">
         </div>

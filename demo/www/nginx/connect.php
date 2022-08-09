@@ -74,7 +74,7 @@ function Logincheck($postArr){//登录验证
                 return 1;
             }
             else{
-                alert('用户名或密码错误','../index.html');
+                alert('用户名或密码错误','index.html');
                 return 0;
             }
         }catch(PDOException $e){

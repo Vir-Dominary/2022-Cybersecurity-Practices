@@ -17,15 +17,15 @@
         $hashedAnswer = password_hash($answer,PASSWORD_DEFAULT);
         $imgaddr='../image/'; 
         if($userName==NULL||$password==NULL||$cpassword==NULL){
-            alert('用户名或密码不可为空，请重新输入','../register.html');
+            alert('用户名或密码不可为空，请重新输入','register.html');
             exit();
         }
         else if($password!=$cpassword){
-            alert('两次输入密码不一致，请重新输入','../register.html');
+            alert('两次输入密码不一致，请重新输入','register.html');
             exit();
         }
         else if($answer==NULL){
-            alert('密保答案不可为空','../register.html');
+            alert('密保答案不可为空','register.html');
             exit();
         }
         try {
@@ -34,16 +34,16 @@
               // 用户注册信息数据库写入操作
             $check = registerInDb($userName, $hashedPassword,$question,$hashedAnswer);
             mkdirs($imgaddr,$userName);
-            alert('注册成功！即将返回登陆页面','../index.html');
+            alert('注册成功！即将返回登陆页面','index.html');
             if(empty($check)) {
                 // 如果注册失败，则设置相应的错误提示信息，否则，默认只显示注册成功消息和对应的DIV片段代码
-                alert('注册失败，我也不知道出了什么问题（摊手）','../register.html');
+                alert('注册失败，我也不知道出了什么问题（摊手）','register.html');
                 exit();
             }
         }
         else {
               //用户名重复
-            alert('用户名已经存在！','../register.html');
+            alert('用户名已经存在！','register.html');
             exit();
         }
     }catch(Exception $e) {

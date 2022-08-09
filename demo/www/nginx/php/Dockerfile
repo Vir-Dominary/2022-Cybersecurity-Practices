@@ -6,3 +6,4 @@ RUN docker-php-ext-install pdo_mysql \
 && mkdir -p /usr/src/php/ext \
 && mv phpredis-5.3.6 /usr/src/php/ext/redis \
 && docker-php-ext-install redis
+WORKDIR /etc/php
