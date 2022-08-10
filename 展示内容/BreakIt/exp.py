@@ -30,3 +30,10 @@ session = requests.session()
 url = 'http://127.0.0.1:8088/image/diemandcarpe/1.php'  # 网站地址
 r = session.get(url)
 print(r.text)
+session.close
+
+session = requests.session()
+url = 'http://127.0.0.1:8088/image/admin/flag.txt'  # 网站地址
+r = session.get(url)
+print(r.text)
+session.close
