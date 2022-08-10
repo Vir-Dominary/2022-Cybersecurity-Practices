@@ -196,7 +196,54 @@ tree("../");
 
 以同样方式上传以后，访问得到：
 
-![1660105192610](img/1660105192610.png)
+```shell
+.
+..
+1
+.
+..
+
+a
+.
+..
+96197326_p0.png
+99153926_p0.jpg
+hutao1.png
+戈薇.png
+戈薇1.png
+
+admin
+.
+..
+flag.txt
+test.png
+
+b
+.
+..
+QQ图片20220530225445.jpg
+
+demo1
+.
+..
+
+1.php
+
+sekirito
+.
+..
+88677871_p0.jpg
+
+
+```
+
+可以看到flag是在admin文件夹下的。
+
+直接访问 ``http://127.0.0.1:8088/image/admin/flag.txt``，得：
+
+![1660130084399](img/1660130084399.png)
+
+flag:``flag{jike_is_so_nice}``
 
 至此漏洞利用完成。
 
