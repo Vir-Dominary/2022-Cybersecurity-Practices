@@ -1,0 +1,36 @@
+version: '3.3'
+
+services:
+  phpapache:
+    build: ./php
+    container_name: apache-container
+    ports:
+      - "80:80"
+    depends_on:
+      - mysql
+    volumes:
+      - ./php/html:/usr/src/myapp
+      - ./php/apache:/etc/apache2
+      
+  mysql:
+    build: ./mysql
+    container_name: mysql-container
+    ports:
+      - "3306:3306"
+    volumes:
+#      - ./mysql/data:/var/lib/mysql
+      - ./mysql/sql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: www
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: php-container
+    ports:
+      - "9000:9000"
+    depends_on:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
