@@ -34,7 +34,8 @@
 
 - 初版css效果及基础功能演示：
 
-<iframe height=498 width=510 src="img\web 2.0.mp4">
+[![](img/封面.png)](img\web 2.0.mp4)
+
 
 ## 设计思路
 
