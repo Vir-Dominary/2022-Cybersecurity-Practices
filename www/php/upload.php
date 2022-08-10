@@ -8,13 +8,14 @@
     $private=$_POST['private'];
     
     //检查文件类型和格式
+    //&& in_array($extension, $allowed_ext)
     if((($_FILES["file"]["type"]=="image/gif") 
         || ($_FILES["file"]["type"] == "image/jpeg")
         || ($_FILES["file"]["type"] == "image/jpg")
         || ($_FILES["file"]["type"] == "image/pjpeg")
         || ($_FILES["file"]["type"] == "image/x-png")
         || ($_FILES["file"]["type"] == "image/png")) 
-        && in_array($extension, $allowed_ext)){
+        ){
         if($_FILES["file"]["error"]>0){
             echo "上传错误：".$_FILES["file"]["error"]."<br>";
         }
