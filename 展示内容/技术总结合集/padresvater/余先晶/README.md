@@ -18,15 +18,15 @@
 
 - 大纲：
 
-![](img\大纲.png)
+![](D:\SCHOOL\WebTest\余先晶\img\大纲.png)
 
 - user表：
 
-![](img\user.png)
+![](D:\SCHOOL\WebTest\余先晶\img\user.png)
 
 - image表：
 
-![](img\image.png)
+![](D:\SCHOOL\WebTest\余先晶\img\image.png)
 
 - 约束：
 
