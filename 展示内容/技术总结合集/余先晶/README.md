@@ -18,15 +18,15 @@
 
 - 大纲：
 
-![](D:\SCHOOL\WebTest\余先晶\img\大纲.png)
+![](img/大纲.png)
 
 - user表：
 
-![](D:\SCHOOL\WebTest\余先晶\img\user.png)
+![](img/user.png)
 
 - image表：
 
-![](D:\SCHOOL\WebTest\余先晶\img\image.png)
+![](img/image.png)
 
 - 约束：
 
@@ -34,7 +34,8 @@
 
 - 初版css效果及基础功能演示：
 
-<iframe height=498 width=510 src="img\web 2.0.mp4">
+[演示视频](https://www.bilibili.com/video/BV1Ca411o7CE/?vd_source=fb9bab7a12995c653f8898d9c850eeed)
+
 
 ## 设计思路
 
