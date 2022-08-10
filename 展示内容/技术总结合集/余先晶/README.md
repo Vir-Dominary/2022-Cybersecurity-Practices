@@ -34,11 +34,7 @@
 
 - 初版css效果及基础功能演示：
 
-```HTML
-<video width="320" height="240" controls>
-    <source src="img\web 2.0.mp4" type="video/mp4">
-</video>
-```
+[演示视频](img/web 2.0.mp4)
 
 
 ## 设计思路
