@@ -39,4 +39,4 @@
 
 ## 小组分工
 
-* padresvater——BreakIt&FixIt&修复部分开发bug——个人技术总结详见[padresvater的总结技术报告](./技术总结合集/padresvater.md)
+* padresvater——BreakIt&FixIt&修复部分开发bug——个人技术总结详见[padresvater的总结技术报告](./技术总结合集/padresvater/padresvater.md)
