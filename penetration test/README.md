@@ -128,7 +128,7 @@ insert into `virdy` (`id`, `title`, `text`) values (3,'guest','hello guest');
 
 密保问题更新为三个，但更建议将三个问题同时作为密保。
 
-5.配置项的安全问题<font size=6 color=red>(exist)</font>
+5.配置项的安全问题<font size=6 color=green>(not exist)</font>
 
 >The application might be vulnerable if the application is:
 > + Missing appropriate security hardening across any part of the application stack or improperly configured permissions on cloud services.
@@ -162,7 +162,7 @@ insert into `virdy` (`id`, `title`, `text`) values (3,'guest','hello guest');
 
 本网站中用到的工具或插件数量少，各项产品都处于使用周期内，暂时不存在过时的客户端和服务器。
 
-7.身份验证失效<font size=6 color=red>(exist)</font>
+7.身份验证失效<font size=6 color=green>(notexist)</font>
 
 >Confirmation of the user's identity, authentication, and session management is critical to protect against authentication-related attacks. There may be authentication weaknesses if the application:
 > + Permits automated attacks such as credential stuffing, where the attacker has a list of valid usernames and passwords.
