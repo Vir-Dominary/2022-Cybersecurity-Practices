@@ -8,6 +8,8 @@
 
 ## 工具使用
 
+* burpsuite v2022.7.1
+
 ## 环境搭建
 
 ```bash
@@ -158,7 +160,7 @@ php代码执行成功：
 
 编写的可执行程序如下：
 
-```php 
+```php
 <?php
 function tree($directory)
 
@@ -201,3 +203,5 @@ tree("../");
 # 自动化漏洞利用脚本EXP
 
 详见[exp.py](./exp.py)
+
+其所依赖的环境详见[requirements.txt](./requirements.txt)

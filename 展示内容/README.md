@@ -5,13 +5,14 @@
 * 题目名称：
 * 预估难度： 中等偏易
 
-
 ## 题目描述：
+
 ```
 
 ```
 
 ## 题目考点：
+
 ```
 1. 
 2. 
@@ -19,26 +20,8 @@
 
 ## 思路简述：
 
-
-
-## 题目提示：
-1. 
-2. 
-3. 
-
-
-## 原始 flag 及更新命令：
-
-```shell
-    # 原始 flag
-    flag{flag_test}
-    # ..
-    # 更新 flag 命令
-    echo 'flag{}' > /flag
-```
-
-
 ## 题目环境：
+
 ```
 1. 
 2. 
@@ -46,9 +29,14 @@
 ```
 
 ## 题目制作过程：
+
 1. 设计好漏洞，编写php相关代码
 2. 按照“Docker示例文档.md”来编写Dockerfile，制作好镜像。
 
 ## 题目writeup：
 
+详见[WriteUp.md](BreakIt/WriteUp.md)
+
 ## 小组分工
+
+* padresvater——BreakIt&FixIt&修复部分开发bug——个人技术总结详见[padresvater的总结技术报告](./技术总结合集/padresvater.md)
