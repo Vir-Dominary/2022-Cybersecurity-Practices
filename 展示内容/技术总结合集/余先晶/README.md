@@ -34,7 +34,7 @@
 
 - 初版css效果及基础功能演示：
 
-[![](img/封面.png)](img\web 2.0.mp4)
+<vedio src="img\web 2.0.mp4" controls="controls"></vedio>
 
 
 ## 设计思路
